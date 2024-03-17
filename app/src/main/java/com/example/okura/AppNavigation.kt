@@ -10,8 +10,8 @@ fun AppNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
-        composable("detail/{detailId}") { backStackEntry ->
-            DetailScreen(detailId = backStackEntry.arguments?.getString("detailId") ?: "")
+        composable("searchArticles/{/*TODO*/}") { backStackEntry ->
+            SearchArticleScreen()
         }
     }
 }
