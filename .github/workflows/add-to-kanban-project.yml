@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/add-to-project@main
         with:
-          project-url: https://github.com/orgs/FinalTaxReturn/projects/3
+          project-url: https://github.com/orgs/Okura-JCH/projects/2
           github-token: ${{ secrets.PROJECT_PERSONAL_ACCESS_TOKEN }}
