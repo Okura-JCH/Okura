@@ -23,8 +23,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun HomeScreen(navController: NavHostController) {
-
-}
