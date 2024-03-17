@@ -16,6 +16,3 @@ fun AppNavigation() {
         }
     }
 }
-
-
-
