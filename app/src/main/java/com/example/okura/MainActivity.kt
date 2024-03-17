@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             OkuraTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    AppNavigation()
                 }
             }
         }
@@ -25,10 +26,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
-
-}
-
-@Composable
-fun SearchArticleScreen(){
 
 }
