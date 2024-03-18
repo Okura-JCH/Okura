@@ -1,6 +1,11 @@
 package com.example.okura.ui.components
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -10,20 +15,37 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun HomeNavBar(){
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf("Home", "Articles", "People", "Settings")
 
+    val icons: Map<String, ImageVector> = mapOf(
+        "Home" to Icons.Filled.Home,
+        "Articles" to Icons.Filled.Search, // needa look for a better
+        "People" to Icons.Filled.Face,
+        "Settings" to Icons.Filled.Settings
+    )
+
     NavigationBar {
         items.forEachIndexed { index, item ->
             NavigationBarItem(
-                icon = { Icon(Icons.Filled.Favorite, contentDescription = item) },
+                icon = {
+                    Icon(icons[item] ?: Icons.Filled.Favorite, contentDescription = item)
+                },
                 label = { Text(item) },
                 selected = selectedItem == index,
                 onClick = { selectedItem = index }
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun HomeNavBarPreview() {
+    HomeNavBar()
 }
