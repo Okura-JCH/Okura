@@ -76,17 +76,16 @@ fun CenterAlignedTopAppBarExample() {
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text("Okura") },
-                navigationIcon = {
+                actions = {
                     IconButton(
                         onClick = { /*TODO*/ }
                     ) {
                         Icon(
                             imageVector = Icons.Default.AccountCircle,
-                            contentDescription = "Menu"
+                            contentDescription = "Profile"
                         )
                     }
                 },
-                actions = { /* ... */ },
                 scrollBehavior = scrollBehavior
             )
         }
