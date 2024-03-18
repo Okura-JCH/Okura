@@ -69,6 +69,7 @@ fun HomeAppBar(
             containerColor = Color.Transparent,
             titleContentColor = MaterialTheme.colorScheme.primary
         ),
+        modifier = modifier
     )
 }
 
