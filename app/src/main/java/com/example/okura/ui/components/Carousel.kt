@@ -28,6 +28,8 @@ fun ArticleCarousel(
     pageCount: Int = 10,
     autoScrollDuration: Long = 3000L,
 ) {
+    val itemList = listOf("1", "2", "3")
+
     val pagerState = rememberPagerState(
         initialPage = 0,
         pageCount = { pageCount }
@@ -45,6 +47,7 @@ fun ArticleCarousel(
     }
 
     HorizontalPager(
+
         state = pagerState,
         pageSpacing = 0.dp,
         userScrollEnabled = true,
@@ -61,7 +64,6 @@ fun ArticleCarousel(
         }
     )
 }
-val itemList = listOf("1", "2", "3")
 
 @Preview
 @Composable
