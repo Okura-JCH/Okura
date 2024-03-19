@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.okura.R
 
 @Composable
-fun CarouselCard(){
+fun CarouselCard(item: String) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
@@ -36,5 +36,5 @@ fun CarouselCard(){
 @Preview
 @Composable
 fun CarouselCardPreview() {
-    CarouselCard()
+    CarouselCard(item = "Item")
 }
