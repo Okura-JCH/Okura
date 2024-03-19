@@ -1,6 +1,7 @@
 package com.example.okura.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -31,16 +32,37 @@ fun CarouselCard(item: String) {
     ) {
         Row {
             Image(painter = painterResource(id = R.drawable.sample), contentDescription = "sample")
-            Text(
-                text = "Lorem ipsum dolor sit amet, consectetur adipisci elit.",
-                modifier = Modifier
-                    .padding(16.dp),
-                textAlign = TextAlign.Center,
-            )
+            HeadlineTexts()
         }
     }
 }
 
+@Composable
+fun HeadlineTexts(){
+    Column {
+        HeadLine(text = "HeadLine")
+        SubText(text = "iikanji no subtext will be placed here. Bikkuri suru kurai iikanji ni placed.")
+    }
+}
+
+
+@Composable
+fun HeadLine(text: String) {
+    Text(
+        text = text,
+        modifier = Modifier.padding(8.dp),
+        textAlign = TextAlign.Center,
+    )
+}
+
+@Composable
+fun SubText(text: String) {
+    Text(
+        text = text,
+        modifier = Modifier.padding(8.dp),
+        textAlign = TextAlign.Center,
+    )
+}
 @Preview
 @Composable
 fun CarouselCardPreview() {
