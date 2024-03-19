@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.okura.ui.components.ArticleCarousel
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
@@ -30,7 +31,10 @@ fun HomeScreen(navController: NavHostController) {
                 title = { Text(text = "Okura") })
         }
     ) { paddingValues ->
-        Text(text = "Home", modifier = Modifier.padding(paddingValues))
+        ArticleCarousel(
+            modifier = Modifier.padding(paddingValues),
+            pageCount = 10,
+        )
     }
 }
 

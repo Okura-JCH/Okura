@@ -24,6 +24,7 @@ import kotlinx.coroutines.delay
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ArticleCarousel(
+    modifier: Modifier = Modifier,
     pageCount: Int = 10,
     autoScrollDuration: Long = 3000L,
 ) {
@@ -44,8 +45,6 @@ fun ArticleCarousel(
     }
 
     HorizontalPager(
-        modifier = Modifier
-            .padding(32.dp),
         state = pagerState,
         pageSpacing = 0.dp,
         userScrollEnabled = true,
@@ -58,16 +57,10 @@ fun ArticleCarousel(
             Orientation.Horizontal
         ),
         pageContent = {
-            CarouselItem(itemList[it % itemList.size]) // itemListからアイテムを取得
+            CarouselCard(itemList[it % itemList.size]) // itemListからアイテムを取得
         }
     )
 }
-
-@Composable
-fun CarouselItem(item: String) {
-    CarouselCard(item)
-}
-
 val itemList = listOf("1", "2", "3")
 
 @Preview

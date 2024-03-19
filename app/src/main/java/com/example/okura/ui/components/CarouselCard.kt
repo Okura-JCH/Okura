@@ -21,7 +21,7 @@ fun CarouselCard(item: String) {
             defaultElevation = 6.dp
         ),
         modifier = Modifier
-            .size(width = 240.dp, height = 100.dp)
+            .size(width = 320.dp, height = 140.dp)
     ) {
         Image(painter = painterResource(id = R.drawable.sample), contentDescription = "sample")
         Text(
