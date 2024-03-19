@@ -1,4 +1,4 @@
-package com.example.okura.ui.components
+package com.example.okura.ui.components.carousel
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Row

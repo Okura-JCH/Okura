@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.okura.ui.components.ArticleCarousel
+import com.example.okura.ui.components.carousel.ArticleCarousel
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
@@ -37,6 +37,7 @@ fun HomeScreen(navController: NavHostController) {
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {
             Spacer(modifier = Modifier.height(32.dp))
+            CarouselDescription()
             ArticleCarousel(pageCount = 10)
         }
     }
