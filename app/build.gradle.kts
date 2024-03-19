@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.okura"
-        minSdk = 24
+        minSdk = 28 // bring 24 back when needed
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
