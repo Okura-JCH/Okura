@@ -4,6 +4,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.interaction.collectIsDraggedAsState
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.PagerDefaults
@@ -24,7 +25,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun ArticleCarousel(
     pageCount: Int = 10,
-    autoScrollDuration: Long = 3000L
+    autoScrollDuration: Long = 3000L,
 ) {
     val pagerState = rememberPagerState(
         initialPage = 0,
@@ -43,7 +44,8 @@ fun ArticleCarousel(
     }
 
     HorizontalPager(
-        modifier = Modifier,
+        modifier = Modifier
+            .padding(32.dp),
         state = pagerState,
         pageSpacing = 0.dp,
         userScrollEnabled = true,
