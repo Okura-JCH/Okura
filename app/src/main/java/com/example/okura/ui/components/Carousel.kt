@@ -15,13 +15,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun AwesomeCarousel(
+fun ArticleCarousel(
     pageCount: Int = 10,
     autoScrollDuration: Long = 3000L
 ) {
@@ -34,6 +35,7 @@ fun AwesomeCarousel(
         var currentPageKey by remember { mutableStateOf(pagerState.currentPage) }
         LaunchedEffect(currentPageKey) {
             delay(autoScrollDuration)
+            // 現在のページに1を加え、ページ数で割った余りを次のページインデックスとする
             val nextPage = (pagerState.currentPage + 1) % pageCount
             pagerState.animateScrollToPage(nextPage)
             currentPageKey = nextPage
@@ -54,7 +56,7 @@ fun AwesomeCarousel(
             Orientation.Horizontal
         ),
         pageContent = {
-            CarouselItem(itemList[it])
+            CarouselItem(itemList[it % itemList.size]) // itemListからアイテムを取得
         }
     )
 }
@@ -65,3 +67,9 @@ fun CarouselItem(item: String) {
 }
 
 val itemList = listOf("1", "2", "3")
+
+@Preview
+@Composable
+fun ArticleCarouselPreview() {
+    ArticleCarousel()
+}

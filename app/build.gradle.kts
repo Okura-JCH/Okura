@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.okura"
-        minSdk = 28 // bring 24 back when needed
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -67,5 +67,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("com.android.tools:MaskableFrameLayout:1.0.0")
 }
