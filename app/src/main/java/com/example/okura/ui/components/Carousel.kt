@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.PagerDefaults
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -27,6 +28,7 @@ fun ArticleCarousel(
     modifier: Modifier = Modifier,
     pageCount: Int = 10,
     autoScrollDuration: Long = 3000L,
+    pagerState: PagerState
 ) {
     val itemList = listOf("1", "2", "3")
 
