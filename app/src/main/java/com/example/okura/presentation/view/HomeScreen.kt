@@ -1,6 +1,5 @@
 package com.example.okura.presentation.view
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
@@ -26,10 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.okura.ui.components.ArticleCarousel
-import com.example.okura.ui.components.DotIndicators
 import com.example.okura.ui.theme.OkuraTheme
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(navController: NavHostController) {
     Scaffold(
@@ -42,13 +39,6 @@ fun HomeScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(32.dp))
             ArticleCarousel(pageCount = 10)
         }
-        DotIndicators(
-            pagerState = pagerState,
-            pageCount = pageCount,
-            modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .padding(16.dp)
-        )
     }
 }
 

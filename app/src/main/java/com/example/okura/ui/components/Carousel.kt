@@ -28,7 +28,6 @@ fun ArticleCarousel(
     modifier: Modifier = Modifier,
     pageCount: Int = 10,
     autoScrollDuration: Long = 3000L,
-    pagerState: PagerState
 ) {
     val itemList = listOf("1", "2", "3")
 
