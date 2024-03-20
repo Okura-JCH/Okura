@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.okura.presentation.view.HomeScreen
-import com.example.okura.presentation.view.SearchArticleScreen
+import com.example.okura.presentation.view.screens.HomeScreen
+import com.example.okura.presentation.view.screens.SearchArticleScreen
 
 @Composable
 fun AppNavigation() {

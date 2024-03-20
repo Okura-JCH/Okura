@@ -1,4 +1,4 @@
-package com.example.okura.ui.components
+package com.example.okura.presentation.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face

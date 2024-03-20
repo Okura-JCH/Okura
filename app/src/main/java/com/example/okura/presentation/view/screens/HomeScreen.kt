@@ -1,4 +1,4 @@
-package com.example.okura.presentation.view
+package com.example.okura.presentation.view.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
@@ -21,8 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.okura.ui.components.carousel.ArticleCarousel
-import com.example.okura.ui.components.carousel.CarouselDescription
+import com.example.okura.presentation.components.carousel.ArticleCarousel
+import com.example.okura.presentation.components.carousel.CarouselDescription
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable

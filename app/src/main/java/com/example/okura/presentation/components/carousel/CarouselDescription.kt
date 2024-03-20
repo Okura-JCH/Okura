@@ -1,4 +1,4 @@
-package com.example.okura.ui.components.carousel
+package com.example.okura.presentation.components.carousel
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
