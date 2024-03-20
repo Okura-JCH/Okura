@@ -12,8 +12,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.example.okura.R
 import com.example.okura.domain.model.NewsItem
 
@@ -26,16 +29,27 @@ fun NewsCard(item: NewsItem) {
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Image(
-                painter = rememberImagePainter(item.imageUrl),
-                contentDescription = "アイキャッチ画像",
+                painter = rememberAsyncImagePainter(item.imageUrl),
+                contentDescription = "eyecatch image",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(180.dp), // 適切な高さを設定
-                contentScale = ContentScale.Crop // 画像のスケールタイプ
+                    .fillMaxWidth(),
+                contentScale = ContentScale.Crop
             )
             Text(text = item.title, style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(4.dp))
             Text(text = item.description, style = MaterialTheme.typography.bodySmall)
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewNewsCard() {
+    val dummyNewsItem = NewsItem(
+        id = 1,
+        title = "title",
+        description = "description",
+        imageUrl = "https://picsum.photos/200/300?random=1"
+    )
+    NewsCard(item = dummyNewsItem)
 }

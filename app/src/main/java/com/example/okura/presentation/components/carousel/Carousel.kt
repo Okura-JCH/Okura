@@ -55,11 +55,8 @@ fun ArticleCarousel(
         beyondBoundsPageCount = 0,
         pageSize = PageSize.Fill,
         flingBehavior = PagerDefaults.flingBehavior(state = pagerState),
-        pageNestedScrollConnection = PagerDefaults.pageNestedScrollConnection(
-            Orientation.Horizontal
-        ),
         pageContent = {
-            CarouselCard(itemList[it % itemList.size]) // itemListからアイテムを取得
+            CarouselCard(itemList[it % itemList.size])
         }
     )
 }
