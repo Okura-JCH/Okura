@@ -1,5 +1,6 @@
 package com.example.okura.presentation.view
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -20,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.okura.ui.components.carousel.ArticleCarousel
+import com.example.okura.ui.components.carousel.CarouselDescription
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
@@ -30,7 +33,10 @@ fun HomeScreen(navController: NavHostController) {
                 title = { Text(text = "Okura") })
         }
     ) { paddingValues ->
-        Text(text = "Home", modifier = Modifier.padding(paddingValues))
+        Column(modifier = Modifier.padding(paddingValues)) {
+            CarouselDescription()
+            ArticleCarousel(pageCount = 10)
+        }
     }
 }
 
