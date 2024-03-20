@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.okura.domain.model.NewsItem
 
+
 @Composable
 fun NewsCard(item: NewsItem) {
     ElevatedCard(
