@@ -23,6 +23,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.okura.presentation.components.carousel.ArticleCarousel
 import com.example.okura.presentation.components.carousel.CarouselDescription
+import com.example.okura.presentation.components.feed.NewsFeed
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
