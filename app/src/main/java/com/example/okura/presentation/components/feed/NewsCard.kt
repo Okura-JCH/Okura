@@ -32,6 +32,8 @@ fun NewsCard(item: NewsItem) {
                 painter = rememberAsyncImagePainter(item.imageUrl),
                 contentDescription = "eyecatch image",
                 modifier = Modifier
+                    .height(200.dp)
+                    .width(400.dp)
                     .fillMaxWidth(),
                 contentScale = ContentScale.Crop
             )
