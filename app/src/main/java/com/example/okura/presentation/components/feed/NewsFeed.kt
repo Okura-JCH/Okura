@@ -19,7 +19,6 @@ fun NewsFeed(newsItems: List<NewsItem>) {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun PreviewNewsFeed() {
