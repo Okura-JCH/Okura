@@ -21,7 +21,6 @@ fun NewsFeed(newsItems: List<NewsItem>) {
 
 @Preview(showBackground = true)
 @Composable
-private fun
- PreviewNewsFeed() {
+private fun PreviewNewsFeed() {
     NewsFeed(newsList)
 }
