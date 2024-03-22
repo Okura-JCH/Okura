@@ -31,12 +31,17 @@ import com.example.okura.presentation.components.feed.NewsFeed
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
+) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             HomeAppBar(
-                title = { Text(text = "Okura") })
-        }
+                title = { Text(text = "Okura") },
+            )
+        },
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {
             CarouselDescription()
@@ -53,7 +58,7 @@ fun HomeAppBar(
     title: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     navigationIcon: @Composable (() -> Unit)? = null,
-    actions: @Composable RowScope.() -> Unit = {}
+    actions: @Composable RowScope.() -> Unit = {},
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
@@ -63,32 +68,33 @@ fun HomeAppBar(
             IconButton(onClick = { /* do something */ }) {
                 Icon(
                     imageVector = Icons.Filled.Favorite,
-                    contentDescription = "Localized description"
+                    contentDescription = "Localized description",
                 )
             }
         },
         actions = {
             IconButton(
-                onClick = { /*TODO*/ }
+                onClick = { /*TODO*/ },
             ) {
                 Icon(
                     imageVector = Icons.Default.AccountCircle,
-                    contentDescription = "Profile"
+                    contentDescription = "Profile",
                 )
             }
         },
         scrollBehavior = scrollBehavior,
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Transparent,
-            titleContentColor = MaterialTheme.colorScheme.primary
-        ),
-        modifier = modifier
+        colors =
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = Color.Transparent,
+                titleContentColor = MaterialTheme.colorScheme.primary,
+            ),
+        modifier = modifier,
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreenPreview() {
+private fun HomeScreenPreview() {
     OkuraTheme {
         val navController = rememberNavController() // dummy navController for preview
         HomeScreen(navController = navController)
@@ -97,6 +103,6 @@ fun HomeScreenPreview() {
 
 @Preview
 @Composable
-fun HomeAppBarPreview() {
+private fun HomeAppBarPreview() {
     HomeAppBar(title = { /*TODO*/ })
 }

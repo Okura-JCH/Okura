@@ -19,7 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ArticleCarousel(
@@ -29,10 +28,11 @@ fun ArticleCarousel(
 ) {
     val itemList = listOf("1", "2", "3")
 
-    val pagerState = rememberPagerState(
-        initialPage = 0,
-        pageCount = { pageCount }
-    )
+    val pagerState =
+        rememberPagerState(
+            initialPage = 0,
+            pageCount = { pageCount },
+        )
     val isDragged by pagerState.interactionSource.collectIsDraggedAsState()
     if (!isDragged) {
         var currentPageKey by remember { mutableStateOf(pagerState.currentPage) }
@@ -46,7 +46,6 @@ fun ArticleCarousel(
     }
 
     HorizontalPager(
-
         state = pagerState,
         pageSpacing = 0.dp,
         userScrollEnabled = true,
@@ -56,13 +55,13 @@ fun ArticleCarousel(
         pageSize = PageSize.Fill,
         flingBehavior = PagerDefaults.flingBehavior(state = pagerState),
         pageContent = {
-            CarouselCard(itemList[it % itemList.size])
-        }
+            CarouselCard(itemList[it % itemList.size]) // itemListからアイテムを取得
+        },
     )
 }
 
 @Preview
 @Composable
-fun ArticleCarouselPreview() {
-    ArticleCarousel()
+private fun ArticleCarouselPreview(modifier: Modifier = Modifier) {
+    ArticleCarousel(modifier = modifier)
 }

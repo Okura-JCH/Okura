@@ -20,15 +20,17 @@ import androidx.compose.ui.unit.dp
 import com.example.okura.R
 
 @Composable
-fun CarouselCard(item: String) {
+fun CarouselCard(
+    item: String,
+    modifier: Modifier = Modifier,
+) {
     ElevatedCard(
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
-        modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentWidth(Alignment.CenterHorizontally)
-            .size(width = 320.dp, height = 140.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+        modifier =
+            modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.CenterHorizontally)
+                .size(width = 320.dp, height = 140.dp),
     ) {
         Row {
             Image(painter = painterResource(id = R.drawable.sample), contentDescription = "sample")
@@ -38,33 +40,39 @@ fun CarouselCard(item: String) {
 }
 
 @Composable
-fun HeadlineTexts(){
+fun HeadlineTexts(modifier: Modifier = Modifier) {
     Column {
         HeadLine(text = "HeadLine")
         SubText(text = "iikanji no subtext will be placed here. Bikkuri suru kurai iikanji ni placed.")
     }
 }
 
-
 @Composable
-fun HeadLine(text: String) {
+fun HeadLine(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
     Text(
         text = text,
-        modifier = Modifier.padding(8.dp),
+        modifier = modifier.padding(8.dp),
         textAlign = TextAlign.Center,
     )
 }
 
 @Composable
-fun SubText(text: String) {
+fun SubText(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
     Text(
         text = text,
-        modifier = Modifier.padding(8.dp),
+        modifier = modifier.padding(8.dp),
         textAlign = TextAlign.Center,
     )
 }
+
 @Preview
 @Composable
-fun CarouselCardPreview() {
+private fun CarouselCardPreview() {
     CarouselCard(item = "Item")
 }

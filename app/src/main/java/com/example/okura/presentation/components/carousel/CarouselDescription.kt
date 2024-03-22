@@ -8,10 +8,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CarouselDescription() {
+fun CarouselDescription(modifier: Modifier = Modifier) {
     Text(
         text = "Our Picks",
         style = MaterialTheme.typography.headlineSmall,
-        modifier = Modifier.padding(32.dp, 16.dp, 16.dp, 16.dp)
+        modifier = modifier.padding(32.dp, 16.dp, 16.dp, 16.dp),
     )
 }
