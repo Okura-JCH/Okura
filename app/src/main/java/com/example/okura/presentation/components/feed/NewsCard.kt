@@ -19,10 +19,13 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.okura.domain.model.NewsItem
 
 @Composable
-fun NewsCard(item: NewsItem) {
+fun NewsCard(
+    item: NewsItem,
+    modifier: Modifier = Modifier,
+) {
     ElevatedCard(
         modifier =
-            Modifier
+            modifier
                 .padding(8.dp)
                 .fillMaxWidth(),
     ) {
