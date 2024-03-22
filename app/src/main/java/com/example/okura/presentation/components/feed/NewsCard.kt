@@ -46,7 +46,8 @@ fun NewsCard(item: NewsItem) {
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewNewsCard() {
+private fun
+ PreviewNewsCard() {
     val dummyNewsItem =
         NewsItem(
             id = 1,
