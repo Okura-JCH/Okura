@@ -11,7 +11,7 @@ import com.example.okura.domain.model.NewsItem
 @Composable
 fun NewsFeed(newsItems: List<NewsItem>) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2)
+        columns = GridCells.Fixed(2),
     ) {
         items(newsItems) { newsItem ->
             NewsCard(item = newsItem)

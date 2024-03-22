@@ -4,5 +4,5 @@ data class NewsItem(
     val id: Int,
     val imageUrl: String,
     val title: String,
-    val description: String
+    val description: String,
 )
