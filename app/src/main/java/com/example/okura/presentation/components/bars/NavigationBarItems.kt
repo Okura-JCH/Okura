@@ -1,4 +1,4 @@
-package com.example.okura.presentation.components
+package com.example.okura.presentation.components.bars
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
