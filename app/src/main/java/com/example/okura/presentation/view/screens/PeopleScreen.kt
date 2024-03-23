@@ -26,7 +26,7 @@ fun PeopleScreen(
         modifier = modifier,
         topBar = {
             HomeAppBar(
-                title = { Text(text = "Okura") },
+                title = { Text(text = "記事をさがす") },
             )
         },
         bottomBar = {
