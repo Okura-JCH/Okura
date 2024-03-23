@@ -21,7 +21,7 @@ enum class BottomNavBarItem(
         label = "Search",
         route = "search",
     ),
-    Person(
+    People(
         icon = Icons.Outlined.Person,
         label = "Person",
         route = "person",
