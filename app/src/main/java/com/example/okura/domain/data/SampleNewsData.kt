@@ -5,6 +5,13 @@ import com.example.okura.domain.model.NewsItem
 val sampleNewsItems =
     listOf(
         NewsItem(
+            id = 0,
+            title = "Title",
+            categoryId = 0,
+            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            imageUrl = "https://picsum.photos/200/300?random=0",
+        ),
+        NewsItem(
             id = 1,
             title = "Title",
             categoryId = 1,
@@ -170,15 +177,5 @@ val sampleNewsItems =
                     "adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                     "",
             imageUrl = "https://picsum.photos/200/300?random=17",
-        ),
-        NewsItem(
-            id = 18,
-            title = "Title",
-            categoryId = 18,
-            description =
-                "Lorem ipsum dolor sit amet, consectetur " +
-                    "adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                    "",
-            imageUrl = "https://picsum.photos/200/300?random=18",
         ),
     )
