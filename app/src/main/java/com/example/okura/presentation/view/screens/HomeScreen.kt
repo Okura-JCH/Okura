@@ -38,16 +38,19 @@ fun HomeScreen(
             )
         },
         bottomBar = {
-            NavigationBarItems(selectedItem = selectedItem) { index, itemRoute ->
-                selectedItem = index
-                navController.navigate(itemRoute) {
-                    popUpTo(navController.graph.startDestinationId) {
-                        saveState = true
+            NavigationBarItems(
+                selectedItem = selectedItem,
+                onItemSelect = { index, route ->
+                    selectedItem = index
+                    navController.navigate(route) {
+                        popUpTo(navController.graph.startDestinationId) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
                     }
-                    launchSingleTop = true
-                    restoreState = true
-                }
-            }
+                },
+            )
         },
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {

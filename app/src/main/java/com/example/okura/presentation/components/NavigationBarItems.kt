@@ -14,7 +14,7 @@ fun NavigationBarItems(
     onItemSelect: (Int, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    NavigationBar {
+    NavigationBar(modifier = modifier) {
         BottomNavBarItem.values().forEachIndexed { index, item ->
             NavigationBarItem(
                 icon = { Icon(item.icon, contentDescription = item.label) },
