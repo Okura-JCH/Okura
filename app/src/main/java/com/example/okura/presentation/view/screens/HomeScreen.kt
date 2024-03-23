@@ -4,9 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,8 +17,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.okura.domain.data.sampleNewsItems
-import com.example.okura.domain.model.BottomNavBarItem
 import com.example.okura.presentation.components.HomeAppBar
+import com.example.okura.presentation.components.NavigationBarItems
 import com.example.okura.presentation.components.carousel.ArticleCarousel
 import com.example.okura.presentation.components.carousel.CarouselDescription
 import com.example.okura.presentation.components.feed.NewsFeed
@@ -41,23 +38,14 @@ fun HomeScreen(
             )
         },
         bottomBar = {
-            NavigationBar {
-                BottomNavBarItem.values().forEachIndexed { index, item ->
-                    NavigationBarItem(
-                        icon = { Icon(item.icon, contentDescription = item.label) },
-                        label = { Text(item.label) },
-                        selected = selectedItem == index,
-                        onClick = {
-                            selectedItem = index
-                            navController.navigate(item.route) {
-                                popUpTo(navController.graph.startDestinationId) {
-                                    saveState = true
-                                }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        },
-                    )
+            NavigationBarItems(selectedItem = selectedItem) { index, itemRoute ->
+                selectedItem = index
+                navController.navigate(itemRoute) {
+                    popUpTo(navController.graph.startDestinationId) {
+                        saveState = true
+                    }
+                    launchSingleTop = true
+                    restoreState = true
                 }
             }
         },
