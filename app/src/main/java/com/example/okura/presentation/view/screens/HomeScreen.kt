@@ -13,11 +13,17 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.okura.domain.data.sampleNewsItems
+import com.example.okura.domain.model.BottomNavBarItem
 import com.example.okura.presentation.components.carousel.ArticleCarousel
 import com.example.okura.presentation.components.carousel.CarouselDescription
 import com.example.okura.presentation.components.feed.NewsFeed
@@ -35,12 +42,34 @@ fun HomeScreen(
     navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
+    var selectedItem by remember { mutableIntStateOf(0) }
     Scaffold(
         modifier = modifier,
         topBar = {
             HomeAppBar(
                 title = { Text(text = "Okura") },
             )
+        },
+        bottomBar = {
+            NavigationBar {
+                BottomNavBarItem.values().forEachIndexed { index, item ->
+                    NavigationBarItem(
+                        icon = { Icon(item.icon, contentDescription = item.label) },
+                        label = { Text(item.label) },
+                        selected = selectedItem == index,
+                        onClick = {
+                            selectedItem = index
+                            navController.navigate(item.route) {
+                                popUpTo(navController.graph.startDestinationId) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        },
+                    )
+                }
+            }
         },
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {
