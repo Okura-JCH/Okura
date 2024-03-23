@@ -6,8 +6,8 @@ WORKDIR /opt
 
 RUN apt-get update --quiet --yes \
     && apt-get autoremove --quiet --yes \
-    && apt-get install --quiet --yes --no-install-recommends wget=1.21.2 \
-    && apt-get install --quiet --yes --no-install-recommends unzip=6.0-28 \
+    && apt-get install --quiet --yes --no-install-recommends wget=1.21-1+deb11u1 \
+    && apt-get install --quiet --yes --no-install-recommends unzip=6.0-26+deb11u1 \
     && rm -rf /var/lib/apt/lists/* && \
     wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip && \
     unzip -q -d android-sdk-linux android-sdk.zip && \
