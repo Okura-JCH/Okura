@@ -1,4 +1,4 @@
-package com.example.okura.ui.components
+package com.example.okura.presentation.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
@@ -15,20 +15,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun HomeNavBar(){
+fun HomeNavBar(modifier: Modifier = Modifier) {
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf("Home", "Articles", "People", "Settings")
 
-    val icons: Map<String, ImageVector> = mapOf(
-        "Home" to Icons.Filled.Home,
-        "Articles" to Icons.Filled.Search, // needa look for a better
-        "People" to Icons.Filled.Face,
-        "Settings" to Icons.Filled.Settings
-    )
+    val icons: Map<String, ImageVector> =
+        mapOf(
+            "Home" to Icons.Filled.Home,
+            // needa look for a better
+            "Articles" to Icons.Filled.Search,
+            "People" to Icons.Filled.Face,
+            "Settings" to Icons.Filled.Settings,
+        )
 
     NavigationBar {
         items.forEachIndexed { index, item ->
@@ -38,7 +41,7 @@ fun HomeNavBar(){
                 },
                 label = { Text(item) },
                 selected = selectedItem == index,
-                onClick = { selectedItem = index }
+                onClick = { selectedItem = index },
             )
         }
     }
@@ -46,6 +49,6 @@ fun HomeNavBar(){
 
 @Preview
 @Composable
-fun HomeNavBarPreview() {
+private fun HomeNavBarPreview() {
     HomeNavBar()
 }
