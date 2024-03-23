@@ -1,7 +1,6 @@
 package com.example.okura.presentation.components.carousel
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.interaction.collectIsDraggedAsState
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.pager.HorizontalPager
@@ -54,10 +53,6 @@ fun ArticleCarousel(
         beyondBoundsPageCount = 0,
         pageSize = PageSize.Fill,
         flingBehavior = PagerDefaults.flingBehavior(state = pagerState),
-        pageNestedScrollConnection =
-            PagerDefaults.pageNestedScrollConnection(
-                Orientation.Horizontal,
-            ),
         pageContent = {
             CarouselCard(itemList[it % itemList.size]) // itemListからアイテムを取得
         },
