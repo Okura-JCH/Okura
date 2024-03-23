@@ -12,7 +12,7 @@ import com.example.okura.domain.model.NewsItem
 
 @Composable
 fun NewsFeed(
-    @SuppressLint("avoid-using-unstable-collections")
+    @SuppressLint("ComposeUnstableCollections")
     newsItems: List<NewsItem>,
     modifier: Modifier = Modifier,
 ) {
