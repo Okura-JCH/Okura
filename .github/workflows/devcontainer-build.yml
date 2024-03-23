@@ -1,0 +1,20 @@
+name: Android Build in DevContainer
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-in-devcontainer:
+    name: Build in DevContainer
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Build
+      uses: devcontainers/ci@v0.3
+      with:
+        runCmd: |
+          ./gradlew assemble
