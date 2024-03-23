@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.okura.domain.data.sampleNewsItems
+import com.example.okura.domain.data.repository.sampleNewsItems
 import com.example.okura.presentation.components.bars.HomeAppBar
 import com.example.okura.presentation.components.bars.NavigationBarItems
 import com.example.okura.presentation.components.carousel.ArticleCarousel
