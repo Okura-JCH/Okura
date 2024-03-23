@@ -15,7 +15,9 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun NavBar(
@@ -59,4 +61,11 @@ fun NavBar(
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun PreviewNavBar() {
+    val navController = rememberNavController()
+    NavBar(navController = navController)
 }
