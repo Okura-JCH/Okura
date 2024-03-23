@@ -8,14 +8,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun ProfileScreen(
+fun SettingScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
 ) {
     Scaffold(modifier = modifier) {
             paddingValues ->
         Text(
-            text = "ProfileScreen",
+            text = "SettingScreen",
             modifier = Modifier.padding(paddingValues),
         )
     }
