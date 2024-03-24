@@ -22,7 +22,6 @@ import com.example.okura.presentation.components.bars.HomeAppBar
 import com.example.okura.presentation.components.bars.NavigationBarItems
 import com.example.okura.presentation.components.carousel.ArticleCarousel
 import com.example.okura.presentation.components.carousel.CarouselDescription
-import com.example.okura.presentation.components.feed.NewsFeed
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
@@ -59,7 +58,7 @@ fun HomeScreen(
             CarouselDescription()
             ArticleCarousel(pageCount = 10)
             Spacer(modifier = Modifier.height(32.dp))
-            NewsFeed(newsViewModel = newsViewModel)
+//            NewsFeed(newsViewModel = newsViewModel)
         }
     }
 }
