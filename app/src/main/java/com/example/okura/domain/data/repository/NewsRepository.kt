@@ -1,4 +1,4 @@
-package com.example.okura.domain.data
+package com.example.okura.domain.data.repository
 
 import com.example.okura.domain.model.NewsItem
 

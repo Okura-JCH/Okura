@@ -1,4 +1,4 @@
-package com.example.okura.presentation.components
+package com.example.okura.presentation.components.articles
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
