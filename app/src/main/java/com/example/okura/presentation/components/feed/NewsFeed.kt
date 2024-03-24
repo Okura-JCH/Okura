@@ -1,5 +1,6 @@
 package com.example.okura.presentation.components.feed
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -12,6 +13,7 @@ import com.example.okura.domain.model.NewsItem
 
 @Composable
 fun NewsFeed(
+    @SuppressLint("ComposeUnstableCollections")
     newsItems: List<NewsItem>,
     modifier: Modifier = Modifier,
 ) {
