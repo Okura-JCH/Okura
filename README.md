@@ -18,6 +18,15 @@ Okura を始めるには、リポジトリーをローカルマシンにクロ�
 git clone https://github.com/yourusername/Okura.git
 ```
 
+## 開発環境のセットアップ (DevContainer を使用)
+
+このプロジェクトは DevContainer をサポートしており、VS Code と Docker を使用して簡単に開発環境を構築できます。DevContainer を使用する最大のメリットは、チームメンバー全員が完全に同一の開発環境を持つことができる点です。これにより、「私のマシンでは動作するが、他の人のマシンでは動作しない」という問題を避けることができます。以下の手順に従ってください：
+
+1. Docker と VS Code をインストールします。
+2. VS Code に [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 拡張機能をインストールします。
+3. プロジェクトフォルダを VS Code で開き、左下の緑色のボタンをクリックして「Reopen in Container」を選択します。
+
+これで、Docker コンテナー内でプロジェクトの開発を始めることができます。コンテナーの設定は `.devcontainer/devcontainer.json` と `.devcontainer/Dockerfile` に定義されています。
 
 Gradle ビルドと Kotlin コードベースを扱うために、最新バージョンの Android Studio がインストールされていることを確認してください。
 
