@@ -13,9 +13,11 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.okura.R
 import com.example.okura.presentation.components.bars.HomeAppBar
 import com.example.okura.presentation.components.bars.NavigationBarItems
 import com.example.okura.ui.theme.OkuraTheme
@@ -30,7 +32,7 @@ fun PeopleScreen(
         modifier = modifier,
         topBar = {
             HomeAppBar(
-                title = { Text(text = "記事をさがす") },
+                title = { Text(text = stringResource(R.string.search_people)) }, // もっとなんかあるだろ
                 navigationIcon = {
                     IconButton(onClick = { /* do something */ }) {
                         Icon(
