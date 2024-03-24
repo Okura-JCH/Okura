@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.okura.domain.data.newsList
+import com.example.okura.domain.data.sampleNewsItems
 import com.example.okura.domain.model.NewsItem
 
 @Composable
@@ -18,7 +18,7 @@ fun NewsFeed(
         columns = GridCells.Fixed(2),
         modifier = modifier,
     ) {
-        items(newsItems) { newsItem ->
+        items(sampleNewsItems) { newsItem ->
             NewsCard(item = newsItem)
         }
     }
@@ -27,5 +27,5 @@ fun NewsFeed(
 @Preview(showBackground = true)
 @Composable
 private fun PreviewNewsFeed() {
-    NewsFeed(newsList)
+    NewsFeed(sampleNewsItems)
 }

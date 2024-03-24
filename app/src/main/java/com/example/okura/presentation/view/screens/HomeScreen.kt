@@ -1,5 +1,6 @@
 package com.example.okura.presentation.view.screens
 
+import NewsViewModel
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -14,20 +15,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.okura.domain.data.sampleNewsItems
 import com.example.okura.presentation.components.bars.HomeAppBar
 import com.example.okura.presentation.components.bars.NavigationBarItems
 import com.example.okura.presentation.components.carousel.ArticleCarousel
 import com.example.okura.presentation.components.carousel.CarouselDescription
-import com.example.okura.presentation.components.feed.NewsFeed
 import com.example.okura.ui.theme.OkuraTheme
 
 @Composable
 fun HomeScreen(
     navController: NavHostController,
     modifier: Modifier = Modifier,
+    newsViewModel: NewsViewModel = viewModel(),
 ) {
     var selectedItem by remember { mutableIntStateOf(0) }
     Scaffold(
@@ -57,7 +58,7 @@ fun HomeScreen(
             CarouselDescription()
             ArticleCarousel(pageCount = 10)
             Spacer(modifier = Modifier.height(32.dp))
-            NewsFeed(newsItems = sampleNewsItems)
+//            NewsFeed(newsViewModel = newsViewModel)
         }
     }
 }
