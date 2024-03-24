@@ -77,4 +77,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.6.0")
 
     lintChecks("com.slack.lint.compose:compose-lint-checks:1.3.1")
+
+   implementation ("androidx.glance:glance-appwidget:1.0.0")
+   implementation ("androidx.glance:glance-material3:1.0.0")
 }
