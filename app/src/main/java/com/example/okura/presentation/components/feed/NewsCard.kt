@@ -54,6 +54,7 @@ private fun PreviewNewsCard() {
         NewsItem(
             id = 1,
             title = "title",
+            categoryId = 1,
             description = "description",
             imageUrl = "https://picsum.photos/200/300?random=1",
         )
